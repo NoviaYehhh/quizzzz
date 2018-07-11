@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>quizzzzzz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body style="text-align:center;">
+    <h1 style="color:cornflowerblue;background-color:lightgray;">About Novia....</h1>
+    <span>你有多了解我呢？</span>
+    <br><br>
+
+
+  <form>
+  <h5>1.我討厭什麼蔬菜</h5>
+    <input type="radio" name="vegetable" value="pumpkin" id="11">南瓜<br>
+    <input type="radio" name="vegetable" value="carrot" id="12"><span id="ans1">紅蘿蔔</span><br>
+    <input type="radio" name="vegetable" value="onion" id="13">洋蔥<br>
+  <h5>2.我的星座?</h5>
+    <input type="radio" name="constellations" value="taurus" id="21"><span id="ans2">金牛座</span><br>
+    <input type="radio" name="constellations" value="cancer" id="22">巨蟹座<br>
+    <input type="radio" name="constellations" value="ram" id="23">牡羊座<br>
+  <h5>3.我男朋友是不是可愛肥肥?</h5>
+    <input type="radio" name="YN" value="yes" id="31"><span id="ans3">YES!!</span><br>
+    <input type="radio" name="YN" value="No" id="32">NO<br>
+  </form>
+
+  <div class="container">
+    <button type="button" class="btn btn-danger" name="button" onclick="score()">結算成績</button>
+    <br>
+  答對題數：<span id="correct"></span>題
+  答錯題數：<span id="false"></span>題
+  </div>
+  <script type="text/javascript">
+  function score(){
+    var x=0
+    var y=0
+    if (document.getElementById('12').checked) {
+      x=x+1;
+    }
+    else {
+      document.getElementById('ans1').style.color="red";
+      y=y+1;
+    }
+    if(document.getElementById('21').checked){
+      x=x+1;
+    }
+    else {
+      document.getElementById('ans2').style.color="red";
+      y=y+1;
+    }
+    if(document.getElementById('31').checked){
+      x=x+1;
+    }
+    else {
+      document.getElementById('ans3').style.color="red";
+      y=y+1
+    }
+    document.getElementById('correct').innerHTML= x;
+    document.getElementById('false').innerHTML= y;
+    setTimeout(function () {
+      if (document.getElementById('correct').innerHTML==1) {
+        alert("答對1題，答錯2題");
+
+      }
+      else if (document.getElementById('correct').innerHTML==2) {
+        alert("答對2題，答錯一題");
+      }
+      else if (document.getElementById('correct').innerHTML==3) {
+        alert("恭喜全對!!")
+      }
+      else {
+        alert("你不認識我，我不認識你")
+      }
+    }, 100);
+
+  }
+
+  </script>
+
+
+  </body>
+</html>
